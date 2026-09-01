@@ -27,9 +27,9 @@ print(find_freq('xxvvvdddf'))
 
 # FIND MAX FREQ OF THE CHAR IN THAT STRING
 
-def find_maxfreq(st : str):
+def find_maxfreq(stv : str):
   max_freq = {}
-  for ch in st:
+  for ch in stv:
     max_freq[ch] = max_freq.get(ch,0)+1
   return max(max_freq, key=max_freq.get)
 print(find_maxfreq('xxvvvdddf'))
