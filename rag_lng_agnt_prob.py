@@ -71,5 +71,95 @@ class Solution:
 
         return longest
 sol = Solution()
-s = "babad"
+s = "ASSAANNNA"
 print(sol.longestPalindrome(s))
+
+
+#Zigzag Conversion — Python Code Analysis
+def zigzag_conversion(s: str, numRows: int) -> str:
+    if numRows == 1 or numRows >= len(s):
+        return s
+
+    rows = [''] * numRows
+    current_row = 0
+    going_down = False
+
+    for char in s:
+        rows[current_row] += char
+        if current_row == 0 or current_row == numRows - 1:
+            going_down = not going_down
+        current_row += 1 if going_down else -1
+
+    return ''.join(rows)
+
+# Reverse Integer
+def reverse_integer(x: int) -> int:
+    sign = -1 if x < 0 else 1
+    x *= sign
+    reversed_x = int(str(x)[::-1])
+    if reversed_x > 2**31 - 1:
+        return 0
+    return sign * reversed_x
+
+# String to Integer (atoi)
+def string_to_integer(s: str) -> int:
+    s = s.strip()
+    if not s:
+        return 0
+
+    sign = 1
+    if s[0] in ['-', '+']:
+        sign = -1 if s[0] == '-' else 1
+        s = s[1:]
+
+    result = 0
+    for char in s:
+        if char.isdigit():
+            result = result * 10 + int(char)
+        else:
+            break
+
+    result *= sign
+    if result < -2**31:
+        return -2**31
+    if result > 2**31 - 1:
+        return 2**31 - 1
+
+    return result
+
+# Palindrome Number
+def is_palindrome_number(x: int) -> bool:
+    if x < 0:
+        return False
+    if x == 0:
+        return True
+    s = str(x)
+    return s == s[::-1]
+
+# REGEX Regular Expression Matching
+def isMatch(s: str, p: str) -> bool:
+    memo = {}
+
+    def dp(i, j):
+        if (i, j) in memo:
+            return memo[(i, j)]
+
+        # If pattern is exhausted
+        if j == len(p):
+            return i == len(s)
+
+        # First character match?
+        first_match = i < len(s) and (p[j] == s[i] or p[j] == '.')
+
+        # Handle '*' (zero or more of preceding element)
+        if j + 1 < len(p) and p[j + 1] == '*':
+            memo[(i, j)] = (
+                dp(i, j + 2) or                # skip "x*" entirely
+                (first_match and dp(i + 1, j)) # use one occurrence of x
+            )
+        else:
+            memo[(i, j)] = first_match and dp(i + 1, j + 1)
+
+        return memo[(i, j)]
+
+    return dp(0, 0)
