@@ -1,0 +1,4 @@
+Internal Liquidity Policy Statement:
+The mandatory minimum quick ratio floor for taking long position exposures is 1.00x.
+Any ratio between 1.00x and 1.15x requires active hedging and heightened executive monitoring.
+A quick ratio strictly above 1.15x is considered fully clear for open market long positions without mandatory hedging.
