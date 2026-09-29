@@ -9,6 +9,8 @@ from functools import partial
 import functools
 
 # Creates a new function with some of the original function's arguments pre-filled or "frozen."
+# functools.partial creates a callable object that wraps an existing function
+#  and binds some arguments ahead of time.
 
 def multiply(a,b):
     return a * b
