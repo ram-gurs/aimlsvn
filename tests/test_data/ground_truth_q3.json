@@ -1,0 +1,23 @@
+[
+  {
+    "id": "q3_revenue",
+    "question": "What was the total Q3 revenue?",
+    "expected_value": 612.4,
+    "tolerance": 0.01,
+    "expected_document": "acme_earnings_call_q3.md"
+  },
+  {
+    "id": "q3_eps",
+    "question": "What was the Q3 diluted EPS?",
+    "expected_value": 1.92,
+    "tolerance": 0.01,
+    "expected_document": "acme_earnings_call_q3.md"
+  },
+  {
+    "id": "q3_quick_ratio",
+    "question": "What is the quick ratio?",
+    "expected_value": 1.23,
+    "tolerance": 0.01,
+    "expected_document": "acme_10k_excerpt.md"
+  }
+]
