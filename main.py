@@ -1,3 +1,4 @@
+import asyncio
 import os
 from config import init_models
 from data_loader import load_documents_and_build_indexes
@@ -57,8 +58,7 @@ def main():
 
     # Step 6
     q6 = "Can we open a long position based on our current Q3 quick ratio under the internal risk policy?"
-    # r6 = pipeline.run_step_6_agent(indexes, q6)
-    r6 =  pipeline.run_step_6_agent(indexes, q6)
+    r6 = asyncio.run(pipeline.run_step_6_agent(indexes, q6))
     write_markdown_report(6, "Self-Correcting Agent Task", q6, r6)
 
     # Step 7
