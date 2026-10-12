@@ -1,23 +1,32 @@
 [
   {
-    "id": "q3_revenue",
-    "question": "What was the total Q3 revenue?",
+    "id": "fy2024_revenue",
+    "question": "What was the total FY2024 revenue in millions of dollars?",
     "expected_value": 612.4,
     "tolerance": 0.01,
-    "expected_document": "acme_earnings_call_q3.md"
+    "expected_document": "10k_excerpt.txt",
+    "metric": "revenue",
+    "period": "FY2024",
+    "unit": "USD_millions"
   },
   {
-    "id": "q3_eps",
-    "question": "What was the Q3 diluted EPS?",
+    "id": "fy2024_eps",
+    "question": "What was the FY2024 diluted EPS?",
     "expected_value": 1.92,
     "tolerance": 0.01,
-    "expected_document": "acme_earnings_call_q3.md"
+    "expected_document": "10k_excerpt.txt",
+    "metric": "diluted_eps",
+    "period": "FY2024",
+    "unit": "USD_per_share"
   },
   {
     "id": "q3_quick_ratio",
-    "question": "What is the quick ratio?",
+    "question": "What was the quick ratio at the end of Q3?",
     "expected_value": 1.23,
     "tolerance": 0.01,
-    "expected_document": "acme_10k_excerpt.md"
+    "expected_document": "q3_earnings_call.txt",
+    "metric": "quick_ratio",
+    "period": "Q3_end",
+    "unit": "ratio"
   }
 ]
